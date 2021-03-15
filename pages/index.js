@@ -43,7 +43,7 @@ export const getServerSideProps = async () => {
   // Example for including static props in a Next.js function component page.
   // Don't forget to include the respective types for any props passed into
   // the component.
-  const response = await axios.get('http://localhost:3000/api/products');
+  const response = await axios.get(`${process.env.API_URL}/api/products`);
   const { products } = await response.data;
   return { props: { products } };
 };

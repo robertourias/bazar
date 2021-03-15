@@ -19,10 +19,12 @@ export default function Header() {
                 </ul>
             </nav>
 
-            <fieldset className={styles.search}>
-                <input type="text" placeholder="Pesquise aqui"/>
-                <a href="/" className={styles.btnSearch}>Buscar</a>
-            </fieldset>
+            <div className={styles.contact}>
+                <a href="tel:+5511980927661" target="_blank">
+                    (11) 98092-7661
+                    <img src="https://imagensemoldes.com.br/wp-content/uploads/2020/04/WhatsApp-Verde-PNG-150x150.png" width="22px" height="22px" alt=""/>
+                </a>
+            </div>
         </header>
     );
 }

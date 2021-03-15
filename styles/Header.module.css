@@ -9,6 +9,20 @@
     border-bottom: 1px solid var(--color-border);
 }
 
+/* @media (max-width: 1024) {
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 90%;
+        max-width: 320px;
+        background: white;
+        height: 100vh;
+        padding: 20px;
+        z-index: 999;
+    }
+} */
+
 .header .nav {
     display: flex;
     align-items: center;
@@ -43,17 +57,12 @@
     text-transform: uppercase;
 }
 
-.search {
-    border: 0;
-    padding: 0;
+.contact a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
-.search input {
-    line-height: 26px;
-    padding: 0 10px;
-    margin-right: 10px;
-}
-
-.btnSearch {
-
+.contact a img {
+    margin: 2px 0 0 5px;
 }

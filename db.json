@@ -1,16 +1,18 @@
-{
-    "products": [
-        {
-            "id": 1,
-            "name": "SmartTV Philips 42 polegadas",
-            "resume": "TV com adaptador WiFi, Netflix, Youtube",
-            "price": "680,00"
-        },
-        {
-            "id": 2,
-            "name": "JBL Flip 4",
-            "resume": "Caixa de som Bluetooth a prova d'água até 1 metro.",
-            "price": "420,00"
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "name": "SmartTV Philips 42 polegadas",
+        "resume": "TV com adaptador WiFi, Netflix, Youtube",
+        "price": "680,00",
+        "image": "https://ceak.org.br/tudoserve/wp-content/uploads/2016/07/aparelhos-de-som-usados-em-campinas-300x300.jpg",
+        "inventory": 1
+    },
+    {
+        "id": 2,
+        "name": "JBL Flip 4",
+        "resume": "Caixa de som Bluetooth a prova d'água até 1 metro.",
+        "price": "420,00",
+        "image": "https://ceak.org.br/tudoserve/wp-content/uploads/2016/07/aparelhos-de-som-usados-em-campinas-300x300.jpg",
+        "inventory": 1
+    }
+]

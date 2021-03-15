@@ -1,7 +1,8 @@
 import Layout from '../components/layout';
 import styles from '../styles/Home.module.css';
+import axios from 'axios';
 
-export default function Home() {
+export default function Home({products}) {
   return (
     <Layout>
         <h1>Meu bazar online</h1>
@@ -10,17 +11,26 @@ export default function Home() {
         </p>
 
         <section className={styles.products}>
-          {[{id: 0}, {id: 1}, {id: 2}, {id: 4}, {id: 5}, {id: 6}].map((index) => {
+          {products.map((product) => {
             return (
-              <div className={styles.product}>
-                <img src="https://ceak.org.br/tudoserve/wp-content/uploads/2016/07/aparelhos-de-som-usados-em-campinas-300x300.jpg" alt="" className={styles.thumb}/>
-                <h3 className={styles.name}>Nome do produto</h3>
-                <p className={styles.resume}>Resumo com detalhes básicos</p>
-                <p className={styles.value}>R$ 30,00</p>
-                <a href="" className={styles.btnReservation}>
-                  Faça a sua reserva
-                  <img src="https://imagensemoldes.com.br/wp-content/uploads/2020/04/WhatsApp-Verde-PNG-150x150.png" alt="Whatsapp"/>
-                </a>
+              <div className={styles.product} key={product.id}>
+                <img src={product.image} alt="" className={styles.thumb}/>
+                <h3 className={styles.name}>{product.name}</h3>
+                <p className={styles.resume}>{product.resume}</p>
+                <p className={styles.value}>R$ {product.price}</p>
+                {product.inventory === 1 ? (
+                  <a 
+                    href={`https://api.whatsapp.com/send?l=pt-BR&phone=5511980927661&text=Gostaria%20de%20reservar%20o%20seguinte%20produto:%20`} 
+                    className={styles.btnReservation}
+                  >
+                    Faça a sua reserva
+                    <img src="https://imagensemoldes.com.br/wp-content/uploads/2020/04/WhatsApp-Verde-PNG-150x150.png" alt="Whatsapp" />
+                  </a>
+                ) : (
+                  <span className={styles.btnReservation + styles.btnDisabled}>
+                    Produto vendido
+                  </span>
+                )}
               </div>
             );
           })} 
@@ -28,3 +38,12 @@ export default function Home() {
     </Layout>
   )
 }
+
+export const getServerSideProps = async () => {
+  // Example for including static props in a Next.js function component page.
+  // Don't forget to include the respective types for any props passed into
+  // the component.
+  const response = await axios.get('http://localhost:3000/api/products');
+  const { products } = await response.data;
+  return { props: { products } };
+};

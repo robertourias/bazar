@@ -1,0 +1,16 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "SmartTV Philips 42 polegadas",
+            "resume": "TV com adaptador WiFi, Netflix, Youtube",
+            "price": "680,00"
+        },
+        {
+            "id": 2,
+            "name": "JBL Flip 4",
+            "resume": "Caixa de som Bluetooth a prova d'água até 1 metro.",
+            "price": "420,00"
+        }
+    ]
+}
